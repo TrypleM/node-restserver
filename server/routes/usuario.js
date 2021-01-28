@@ -29,7 +29,7 @@ app.get('/usuario', verificaToken, (req, res) => {
                 return res.status(400).json({
                     ok: false,
                     message: err
-                })
+                });
             }
 
             Usuario.countDocuments(condicion, (err, conteo) => {
@@ -84,7 +84,7 @@ app.put('/usuario/:id', [verificaToken, verificaAdminRole], (req, res) => {
             return res.status(400).json({
                 ok: false,
                 message: err
-            })
+            });
         }
         res.json({
             ok: true,
